@@ -49,7 +49,7 @@ public class UserService implements UserDetailsService {
         return new UserDTO(user);
     }
 
-    protected User authenticated() {
+     User authenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Jwt jwtPrincipal = (Jwt) authentication.getPrincipal();
         String username = jwtPrincipal.getClaim("username");
